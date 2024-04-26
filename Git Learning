@@ -2,6 +2,14 @@ Learning Git an GitHUB:
 git is the tools that helps to track changes  in the code. 
 GitHUb is the website that developers use to upload the code and collaborate with others developers.
 
+########################################################
+
+# work flows 
+ 1. creating repos itary - a place where you can store your project files, such as HTML documents, CSS stylesheets, JavaScript source code, images, videos.
+ 2. Cloning  a repository - When you want to start working on someone else's project, you clone it onto your computer using git clone <url>. 
+ 3. Making changes  - write, edit, stage, commit, Pull
+ 4. Pushing to the repos on the remote. 
+
 # Basic command:
 git clone <link> it clones the repos on the local pc 
 
