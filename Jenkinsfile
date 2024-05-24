@@ -8,6 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo " this is nischal chudal"
+                input("do you want to continue ")
             }
         }
         stage('Test') {
