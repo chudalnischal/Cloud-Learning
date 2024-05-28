@@ -3,23 +3,37 @@
 
 pipeline {
     agent any
+    environment {
+        GIT_REPO = "https://github.com/nis7al/Python-code-Library.git"
+        GIT_BRANCH = "main"
+        PYTHON_VERSION = 'pyhton3'
+    }
 
     stages {
-        stage('Build') {
+        stage('checkout') {
             steps {
-                echo " this is nischal chudal"
-                input("do you want to continue ")
+                echo "this is the python compiler file"
+                input("do you want to continue:")
+                git branch: 'main', url : 'https://github.com/nis7al/Python-code-Library.git'
             }
         }
-        stage('Test') {
+
+        stage(" dependendies install") {
             steps {
-                echo " this is the second stage  name test"
+                script{
+                if (fileExists('requirements.txt')){
+                    sh "${PYTHON_VERSION} - m pip install requirements.txt"   
+                }
+             }
             }
         }
-        stage('Deploy') {
+        stage('running the file') {
             steps {
-                echo " this is the deploy stage where i will deploy the code to the git after it is tested"
-            }
+                echo " this is th step of running th file for compiling"
+                sh "${PYTHON_VERSION} main.py"
         }
+        }
+        
+            
     }
 }
