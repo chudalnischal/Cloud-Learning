@@ -20,8 +20,10 @@ pipeline {
 
         stage(" dependendies install") {
             steps {
+                echo " this is the dependiencies install stage "
                 script{
                 if (fileExists('requirements.txt')){
+                    echo "this is the script "
                     sh "${PYTHON_VERSION} - m pip install requirements.txt"   
                 }
              }
@@ -30,7 +32,7 @@ pipeline {
         stage('running the file') {
             steps {
                 echo " this is th step of running th file for compiling"
-                sh " ${PYTHON_VERSION} main.py"
+                python main.py
         }
         }
         
