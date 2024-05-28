@@ -2,7 +2,7 @@
 // i am learning the jenkins by writing declarative pipeline instead of scripted pipeline
 
 pipeline {
-    agent any
+    agent { label 'nischal-python'}
     environment {
         GIT_REPO = "https://github.com/nis7al/Python-code-Library.git"
         GIT_BRANCH = "main"
