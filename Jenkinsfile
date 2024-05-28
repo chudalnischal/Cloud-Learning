@@ -6,7 +6,7 @@ pipeline {
     environment {
         GIT_REPO = "https://github.com/nis7al/Python-code-Library.git"
         GIT_BRANCH = "main"
-        PYTHON_VERSION = 'pyhton3'
+        PYTHON_VERSION = 'python3'
     }
 
     stages {
