@@ -1,102 +1,111 @@
-Learning Git an GitHUB:
-Git is the tools that helps to track changes in the code.
-GitHUb is the website that developers use to upload the code and collaborate with others developers. GitHub is also called the Source Control Management(SCM).
+
+GIT and GitHub
+A beginner Guide to Source Control Management
+
+Nischal Chudal
+·
+Jun 27, 2024
+
+
+This is my Day 1 of Cloud Learning Journey. In this journey, I am going to learn New tool and Technologies which is essential for me to land a job in Cloud and I am going to share everything that I have learned in this series.
+
+So, lets get started with Git and GitHub
+
+Git is the tools that helps to track changes in the code. GitHub is the website that developers use to upload the code and collaborate with others developers. GitHub is also called the Source Control Management(SCM).
 
 The basic workflows of the GitHub is:
 
-1.  creating repository - a place where you can store your project files, such as HTML documents,
-    CSS stylesheets, JavaScript source code, images, videos etc
-2.  Cloning a repository - suppose you create a repository in GitHub, but you now want to access and modify it
-    Locally in that case you clone the repo in your local machine.
-3.  Making changes - write, edit, stage, commit, Pull
-4.  Pushing - when you make new changes in the repo it in the local machine and you want the same changes to be
-    applied on the remote repo then you Push those changes.
+Creating repository - a place where you can store your project files, such as HTML documents, CSS stylesheets, JavaScript source code, images, videos etc
 
-The Basic Git Commnands are:
+Cloning a repository - suppose you create a repository in GitHub, but you now want to access and modify it Locally in that case you clone the repo in your local machine.
 
-git clone <link> : it clones the repos on the local pc
+Making changes - write, edit, stage, commit, Pull
+
+Pushing - when you make new changes in the repo it in the local machine and you want the same changes to be applied on the remote repo then you Push those changes.
+
+The Basic Git Commands are:
+
+git clone : it clones the repos on the local pc
+
 git status : for seeing the status of the git.
-git add <filename/source> : adds the new or changed file in your working directory to the git staging area so
-that it is ready to commit.
-commit cmd: it is the record of change
-git commit -m "message": used to make comments on the changes
+
+git add <filename/source> : adds the new or changed file in your working directory to the git staging area so that it is ready to commit. git commit -m "message" used to make comments on the changes
 
 The file Types in Git:
 
-untracked file: new files that git doesnt yet track
-modified: file is changed
-staged: file is ready to staged
-unmodified: unchanged
+untracked file: new files that git doesn't yet track
+
+modified: file is changed staged: file is ready to staged unmodified: unchanged
 
 The other important commands used in Git are as follows:
 
 PUSH COMMAND:
-push comd: upload the loacl repo to the remote repo
-(git push origin main)
-where origin is the name we have made for the remote repo and main is the branch where we want to change
-we can also use git push -u origin main (we do not want to write push origin main always to upload the file so this -u flag says we will always push the file in the origin main and we just need to write git push )
+It upload the local repo to the remote repo.
+
+(git push origin main) where origin is the name we have made for the remote repo and main is the branch where we want to change. we can also use git push -u origin main (we do not want to write push origin main always to upload the file so this -u flag says we will always push the file in the origin main and we just need to write git push )
 
 INIT command:
-used to create a new repository on the folder:
-(git init )
-git remote add origin <link>
+used to create a new repository on the folder: (git init )
+
+git remote add origin <url>
+
 git remote -v =to verify the remote
-git branch = to check the branches of the reopo
+
+git branch = to check the branches of the repo
+
 git branch -M main = to rename branches
 
 Branch Commands
+To Check the current branch with = git branch
 
-To Check the curent branch with = git branch
-To create a new branch = git checkout -b <name>
-To switch between branches = git checkout <name>
-To delete a branch = git branch -d <name>
-git branch -D <name>: this can be used if you are sure about deleting the branch.
+To create a new branch = git checkout -b
+
+To switch between branches = git checkout
+
+To delete a branch = git branch -d
+
+git branch -D : this can be used if you are sure about deleting the branch.
 
 Merging the branches
+To merge two branches main(master) with other branches First we should go to the branch from which you want to merge using : git checkout then use the command : git merge <main> (the main is the branch name )
 
-To merge two branches main(master) with other branches
-First we should go to the branch from which you want to merge using : git checkout <name>
-then use the commad : git merge <main> (the main is the branch name )
+Or the other way is to create a pull request in GitHub, then accept it.
 
-Or the oher way is to create a pull request in Github, then accept it.
-
-Now we make changes in the remote repo of Github but it willnot show untill you write a pull command in the local repo
-for that we use: git pull origin <branch_name>
-which is used to fetch and downaloads all the changes from the remote repo to our local machine.
+Now we make changes in the remote repo of GitHub but it will not show until you write a pull command in the local repo for that we use: git pull origin <branch_name> which is used to fetch and download all the changes from the remote repo to our local machine.
 
 Resolving Merge conflict
-
-An event that take place when git is unable to automatically resolve differences in code between two commits.
-when there are conflicting files during merging.
-you will see <<<<<<< HEAD , =======, >>>>>>> <branch/commit>.
-In these lines you need to manually edit the file to get rid off the conflicts.
-Once done save the file and use : git add <file-name> to stage the file
+An event that take place when git is unable to automatically resolve differences in code between two commits. when there are conflicting files during merging. you will see <<<<<<< HEAD , =======, >>>>>>> <branch/commit>. In these lines you need to manually edit the file to get rid off the conflicts. Once done save the file and use : git add to stage the file
 
 Undoing Changes:
+case 1: staged changes (you added but not committed yet)
 
-case 1: stagged changes (you added but not committed yet):
-use : git reset -- <file-name>
-This will unstage the file but the change will still remain in the working directory.
+use : git reset -- This will unstage the file but the change will still remain in the working directory.
 
 case 2: Committed Change (for 1 commited file only)
+
 use : git reset HEAD~1 (it will undo your last commit).
 
 case 3: Committed Change ( for many commit file)
-use : git log // to see the list of commits.
-git reset <commit_code>// where you see the commit code after typing git log.
-git reset --hard <commit_id>: command is used to reset your current branch to a specific commit. 
 
-case 4: Revert a commit
-use : git revert <commit_id>
-In case you have made a mistake in your latest commit, you can simply use the command `git revert <commit>` to undo that commit
+use : git log // to see the list of commits. git reset <commit_code>// where you see the commit code after typing git log. git reset --hard <commit_id>: command is used to reset your current branch to a specific commit.
+
+case 4: Revert a commit use : git revert <commit_id> In case you have made a mistake in your latest commit, you can simply use the command git revert <commit> to undo that commit
 
 Git Logs
-
 This command shows the history of commits made on a specific branch. It lists each commit’s SHA, author, date, and commit message. It is used to view the history of the project.
 
 Fork:
+It is a new repository that shares code and visibility settings with the original repository. Fork is just like the rough copy of someone work that you save in your own account for creating changes or simply contributing in it.
 
-It is a new repository that shares code and visibility settings with the original repository.
-Fork is just like the rough copy of someones work that you save in your own account for creating changes or simply contributing in it. 
+To fork the repo, you just have to got to the repo that you want to fork. Their will be a fork option in top right corner. Just click on create new form, and then create the repo.
 
-To fork the repo, you just have to got to the repo that you want to fork. Ther will be a fork option in top righ corner. Just click on create new form, and then create the repo. 
+
+
+
+
+Written by
+Nischal Chudal
+
+ 
+©2024 Cloud Blog
+
