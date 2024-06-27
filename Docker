@@ -1,2 +1,161 @@
-# File for the docker commands and the concepts
-#hello this is for checking the weebhook
+Docker for Beginners
+
+Docker is an open container management platform. It is a software platform for developing, shipping, and running application based on containers.
+
+CONTAINERS:
+A container is a small and lightweight execution enviroment that make shared use of the operating system kernel and run it in isolation from one another. By default, a container is relatively well isolated from other containers and its host machine. You can control how isolated a container's network, storage, or other underlying subsystems are from other containers or from the host machine. Multiple containers can run on the same machine and share the OS kernel with other containers, each running as isolated processes in user space. Containers take up less space than VMs (container images are typically tens of MBs in size), can handle more applications and require fewer VMs and Operating systems.
+
+
+Advantages of using Containers: 
+
+1. Containers are more agile than VMs
+2. More flexible and tenable
+3. Easier to assemble, maintain and 
+   port  around then thier counterparts
+4. Enable Hybrid and Multi-Cloud Adoption
+
+Docker Architecture:
+
+It uses a client-server architecture. Docker client communicates with the docker deamon which is responsible for building,running and distributing your containers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Docker Commands:
+Docker group the commands logically into management commands
+
+checkpoint  Manage checkpoints
+container   Manage containers
+image       Manage images
+network     Manage networks
+node        Manage Swarm nodes
+plugin      Manage plugins
+secret      Manage Docker secrets
+service     Manage services
+stack       Manage Docker stacks
+swarm       Manage Swarm
+system      Manage Docker
+volume      Manage volumes
+
+
+
+most used docker commands:
+
+- docker info : To check the informtaion about the docker 
+- docker version: to check the version of the docker 
+
+- docker container run <image_id/image_name>: run the container
+- docker container ls: list all the container
+
+- docker image pull <imge_name:tag>;
+- docker image ls
+- docker image history  <imagename> 
+
+
+
+Removing container and images:
+
+- docker container kill <container_id/container_name>: kill the container
+- docker rmi <image>:	Removes one or more images
+- docker <image/cont> prune [ --all, --filter, --force] <img_id> : removing all the unwanted container/images
+
+
+Logs:
+
+- docker container logs <container_id/container_name>:
+
+
+Docker Port Mapping:
+
+when you run a container in the docker it doesn't expose any ports to the outside world. To make a port available to the outside world we use --publish or -p flag while creating the container.
+
+-p<host_port>:<container_port> 
+-p8000:80 [ it means if any request come to port 8000 of the host, it will route to port 80 of the container]
+
+-P means publish all exposed ports to random ports
+
+
+copying data in the container:
+
+sometimes we need to copy data from local to container. in that case we use docker cp command.
+- docker cp <source_path> <containerid:destination_path>
+
+
+Import and export: 
+
+we can also import and export in the container. export command used to export containee filesystem as a tar archieve. 
+docker container export <container_id/name> <option> 
+there are only two option  
+ a. --output
+ b. -o wriite to a file [ docker export <container_id> -o filename.tar ]
+
+we can also import the container.
+
+- docker imaeg import <filename> <repo_name>
+
+
+Inspect Commands:
+
+- docker container inspect <container_id/container_name>:
+- docker image inspect <img_id/img_name>:
+- docker volume inspect <volume_id>:
+- docker network volume <network_id>:
+
+Commit Command:
+ 
+we can also create the image of the continer while it it running. first runthe contianer make some changes in the container and then 
+docker container commit <container_id/img> <new_name> 
+it will create the new image with the changes that you have made.
+
+
+other Container commands:
+
+docker container stop <container_id/container_name>: stop the running container
+docker container start <container_id/container_name>: start the container 
+docker container restart <container_id/container_name>: restart the container
+docker container rename <old_cont_name> <new_cont_name>: rename the container
+docker pause container: pause the container
+docker unpause container: unpause the container
+
+
+
+docker search <term>: Searches Docker Hub for images
+docker save <image>: Saves one or more images to a tar 
+                     archive file
+docker load: Loads images from a tar archive file created by 
+             docker save
+
+
