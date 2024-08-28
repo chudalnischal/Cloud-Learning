@@ -1,0 +1,16 @@
+workflow: 
+1. create a server and private key 
+   openssl gensra -out nischal.key 2048 
+   openssl req -new -key nischal.key -out nischal.csr -subj "/CN=nischal"
+
+2. create a certificate signin request yaml file.
+3. encode the nischal.csr 
+   ( cat nischal.csr | base64 | tr -d "\n" )
+4. apply the csr yaml file 
+5. approved the csr 
+   ( k certificate approve nischalcsr.yaml )
+6. sharing the certificate with the user
+   ( k get csr <csrname> -o yaml > encodeduser.yaml )
+7. fetch the certificate and decode it 
+   ( echo " certificate" | base64 -d )
+

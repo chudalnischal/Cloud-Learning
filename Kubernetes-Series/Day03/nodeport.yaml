@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-port
+spec:
+  type: NodePort
+  ports:
+  - nodePort: 30001 # this is the ports fro the 
+    port: 80
+    targetPort: 80
+  selector:
+    env: demo # we dont use matchlabel we directl use the label context
+
+

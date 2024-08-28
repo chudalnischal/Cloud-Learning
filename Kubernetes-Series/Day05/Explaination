@@ -1,0 +1,30 @@
+Multi-Pod Init Containers in Kubernetes
+In this task, I explored the implementation of multi-pod init containers in Kubernetes. Here’s a step-by-step breakdown of what I did:
+
+1. Cluster Creation
+Step 1: Created a Kubernetes cluster using a YAML file.
+Outcome: Successfully set up the cluster.
+
+2. Pod Creation with Init Containers
+Step 2: Defined a pod configuration with an init container and an application container using a YAML file.
+App Container:
+Used the busybox image.
+Executed the command: echo "Running the app container" and included a sleep 3600 command to keep the container running.
+Init Container:
+Also used the busybox image.
+Configured with a command and arguments to ensure it runs until a specified service is available.
+Command used: sh -c to pass the arguments.
+Arguments included an until loop to check for the fully qualified domain name (FQDN) of the service.
+
+3. Pod Initialization and Logs
+Step 3: Initialized the pod and verified the logs using kubectl logs.
+Outcome: Successfully viewed the logs of both the app container and the init container to ensure proper execution.
+
+4. Deployment and Service Creation
+Step 4: Created a deployment configuration using a YAML file and applied it to the cluster.
+Step 5: Created a service named my-service to expose the deployment.
+Verification: Checked the service and pods using kubectl commands to ensure proper functionality.
+
+5. Multi-Pod Verification
+Step 6: Verified the proper running of multi-pod init containers by checking the service and pods.
+Outcome: The init container successfully checked for the service, ensuring the app container started only after the condition was met.

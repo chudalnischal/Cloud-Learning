@@ -1,0 +1,16 @@
+# this is the yaml file for creating the namespace in the nodes 
+# i am just creating the one namespace because we already have the default namespace and
+# i will be connecting my customized namespacewith the defalut one
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: first-ns
+
+
+# this is it 
+# we dont have to create any spec or add any template configuration 
+# this is every thing needed to configure the namespace.
+
+
+
+

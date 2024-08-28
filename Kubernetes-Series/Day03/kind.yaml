@@ -1,0 +1,14 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  extraPortMappings: #
+  - containerPort: 30001 # expose the container port  externally to the host 
+    hostPort: 30001 # host can use the service from the 30001
+- role: worker
+- role: worker
+
+#kind cluster doesnt not expose the ports itself
+## the thing is the service should expose to the node ip because this is 
+# the kind cluster the service is using the localhost with the hostport and in this case 
+# the host port and container port is 30001 

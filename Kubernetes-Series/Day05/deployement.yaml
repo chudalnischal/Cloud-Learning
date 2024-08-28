@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy # name of the deployemnt 
+  labels:
+    env: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      env: redis-pod # this and down env should match other wise you will get an error
+  template:
+    metadata:
+      labels:
+        env: redis-pod
+    spec:
+      containers:
+      - name: redis-container
+        image: redis:7.2.5

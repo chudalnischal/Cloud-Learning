@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: liveness-pod
+  labels:
+    name: liveness-pod
+
+spec:
+  containers:
+  - name: liveness-pod
+    image: nginx
+    resources:
+      requests:
+        memory: "50Mi"
+      limits:
+        memory: "128Mi"
+    args:
+    - pwd
+    - touch /tmp/healthy; sleep 30; rm -f /tmp/healthy; sleep 600
+    ports:
+    - containerPort: 80
+    livenessProbe:
+      exec:
+        command:
+        - cat
+        - /tmp/healthy
+      initialDelaySeconds: 10
+      periodSeconds: 5 # every 5 seconds it is checking whether it is returning healthy response or not
+
+

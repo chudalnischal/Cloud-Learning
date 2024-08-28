@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: affinity-pod
+  labels:
+    name: node-affintiy
+spec:
+  containers:
+  - name: nginx-1
+    image: nginx
+    resources:
+      requests:
+        memory: "50Mi"
+      limits:
+        memory: "200Mi"
+    ports:
+    - containerPort: 80
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: disktype
+            operator: In
+            values:
+            - ssd
+

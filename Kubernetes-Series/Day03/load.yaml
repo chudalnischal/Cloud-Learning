@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service # service is the resources 
+metadata:
+  name: lb-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    env: demo # this will match the enviroment vavriable with every other pod in this node and give the cluster ip if it is matched
+    # using the same deployment demo to serve as the backen d
+

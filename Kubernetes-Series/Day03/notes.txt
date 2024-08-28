@@ -1,0 +1,8 @@
+Node port 
+  = service configuration
+
+  kubectl get pods --show-labels ( will show the label swith pods)
+
+  kubectl get svc or service 
+  kubectl get pod -o wide shows the ip 
+  

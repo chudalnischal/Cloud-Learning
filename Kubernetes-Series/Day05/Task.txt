@@ -1,0 +1,12 @@
+1. create the cluster 
+2. create inti-container  within the pod 
+   - add commands to both the init and app container
+     add enviroment variable to the inside the app container 
+     apply it to the cluster
+3. check the status of the pods
+4. create the deployement 
+5. verify the deployement 
+6. Expose the service to the deployement
+7. Verify the container are up and running  
+8. verify the enviroment variable
+9. watch the pods using the kubectl command

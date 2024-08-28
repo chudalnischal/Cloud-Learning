@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  labels:
+    env: demo-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      env: demo-deploy
+  template:
+    metadata:
+      labels:
+        env: demo-deploy
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service
+spec:
+  type: ClusterIP
+  selector:
+    env: demo-deploy
+  ports:
+  - port: 80
+

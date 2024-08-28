@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: schedule-pod
+spec:
+  containers:
+  - name: alp-ns2
+    image: alpine:3.17
+    ports:
+    - containerPort: 81
+  nodeName: day7-worker3
+
+

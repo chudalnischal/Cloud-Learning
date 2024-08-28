@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: http-live
+  labels:
+    name: http-live
+spec:
+  containers:
+  - name: http-live
+    image: nginx
+    args:
+    - liveness
+    livenessProbe:
+      httpGet:
+        path: /healthy
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 10
+    resources:
+      requests:
+        memory: "50Mi"
+      limits:
+        memory: "128Mi"
+    ports:
+    - containerPort: 80
+

@@ -1,0 +1,14 @@
+Perform this task to understand how to configure pods and service inside the namespaces.
+
+1. create the cluster
+2. create 1 namespace ( another let it be the default one)
+3. create and deploy the pods in both the namespace 
+4. Exec into the pods and try connect using the ip address of the other namespace
+5. create a service in both the namespaces
+6. Exec into one of the pods of the namespaces and try connecting first with service ip
+7. then try connecting with service hostname 
+8. cat the /etc/resolv.conf file 
+9. Try connect using FQDN 
+10. Make a summary what you did
+11. Delte the resource inside both the namespaces
+12. Delete the cluster

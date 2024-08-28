@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod3
+  labels:
+    name: pod3
+spec:
+  tolerations:
+  - key: "course"
+    operator: "Equal"
+    value: "science"
+    effect: NoSchedule
+  containers:
+  - name: nginx-1
+    image: nginx
+    ports:
+    - containerPort: 80
+
+
