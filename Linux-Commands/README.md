@@ -99,4 +99,7 @@ This document provides an overview of the most commonly used Linux commands in D
 
 Feel free to explore each command by using `man <command>` to view the manual and understand all possible options. These commands form a strong foundation in Linux, which is essential in the field of DevOps.
 
+You can View More commands by downloading the raw linux cheat sheet 
+
+THANK YOU
 ---
