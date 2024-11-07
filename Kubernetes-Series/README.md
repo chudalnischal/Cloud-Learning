@@ -94,3 +94,10 @@ To get information about the cluster, use:
 kubectl cluster-info --context <cluster-name>
 ```
 This command provides URLs to access the control plane and CoreDNS services of your Kubernetes cluster.
+
+
+This are the basic commands used in Kubernetes. 
+
+Please navigate to the days folder to learn more abou other topic in Kubernetes. 
+
+THANKYOU
