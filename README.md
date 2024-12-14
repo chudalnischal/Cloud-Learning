@@ -18,8 +18,6 @@ In this repository, you’ll find:
 I’ll be adding notes on a range of cloud topics, including but not limited to:
 
 - **AWS (Amazon Web Services)**
-- **Microsoft Azure**
-- **Google Cloud Platform (GCP)**
 - **Cloud Security**
 - **CI/CD Tools**
 - **Infrastructure as Code (IaC) with Terraform**
