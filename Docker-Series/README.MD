@@ -57,30 +57,19 @@ This makes Docker containers comparable to housing society homes, where resource
 - **Isolation:** Keep applications isolated from each other and the underlying system.
 - **Flexibility:** More adaptable and manageable compared to VMs.
 
----
-
-## Disadvantages of Virtual Machines
-- Contain full copies of an operating system, taking up tens of GBs.
-- Slow to boot compared to Docker containers.
-
----
+# Docker Introduction and Architecture
 
 ## What is Docker?
 Docker is an open-source platform that simplifies creating containers and container-based applications. 
 
-### Architecture
+## Docker Architecture
+Docker uses a client-server architecture. The Docker client communicates with the Docker daemon, which is responsible for building, running, and distributing your Docker containers. The Docker client and daemon communicate using a REST API, over UNIX sockets or a network interface.
+
 Docker is written in the Go language and uses namespaces to provide isolated workspaces (containers). When you run a container, Docker creates a set of namespaces for it. These namespaces:
 - Provide a layer of isolation
 - Limit access to each container's namespace
 
 Each container operates in its own namespace, ensuring it is isolated from others.
-
-# Docker Introduction and Architecture
-
-## Docker Architecture
-Docker uses a client-server architecture. The Docker client communicates with the Docker daemon, which is responsible for building, running, and distributing your Docker containers. The Docker client and daemon communicate using a REST API, over UNIX sockets or a network interface.
-
-![Docker Architecture](https://docs.docker.com/get-started/overview/#docker-architecture)
 
 ### Docker Daemon
 The Docker daemon (`dockerd`) listens for Docker API requests and manages Docker objects such as images, containers, networks, and volumes. A daemon can also communicate with other daemons to manage Docker services.
